@@ -9,11 +9,9 @@ class Frame
     end
   
     def roll(pins)
-        if @ball_scores.size >= 2
-            raise RuntimeError, "Only two rolls allowed per frame"
-        end
-      @ball_scores << pins
-    end
+        @ball_scores << pins
+        update_bonus_score
+      end
   
     def is_strike?
       @ball_scores.length == 1 && @ball_scores[0] == 10
@@ -36,6 +34,12 @@ class Frame
         0
       end
     end
+
+    def update_bonus_score
+        if is_strike? || is_spare?
+          @bonus_score += @ball_scores.last
+        end
+      end
   
     def total_score
       score + bonus_score

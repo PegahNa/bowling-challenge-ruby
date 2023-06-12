@@ -47,4 +47,17 @@ describe Frame do
             expect(frame.score).to eq(19)
         end
     end
+
+    describe "#bonus" do
+        it "should return 10 for a strike" do
+            frame.roll(10)
+            expect(frame.bonus).to eq(10)
+        end
+
+        it "should return 0 for a non-strike or non-spare" do
+            frame.roll(9)
+            frame.roll(2)
+            expect(frame.bonus).to eq(0)
+        end
+    end
 end

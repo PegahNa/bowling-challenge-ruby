@@ -15,7 +15,14 @@ describe Frame do
         end
     end
 
-    
-
-
+    describe "#is_strike?" do
+        it "should return true if the first ball is a strike" do
+            frame.roll(10)
+            expect(frame.is_strike?).to be true
+        end
+        it "should return false if the first ball is not a strike" do
+            frame.roll(9)
+            expect(frame.is_strike?).to be false
+        end
+    end
 end

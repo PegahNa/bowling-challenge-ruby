@@ -25,4 +25,18 @@ describe Frame do
             expect(frame.is_strike?).to be false
         end
     end
+
+    describe "#is_spare?" do
+        it "should return true if the first two balls are a spare" do
+            frame.roll(9)
+            frame.roll(1)
+            expect(frame.is_spare?).to be true
+        end
+
+        it "shoulr return false if the first two balls are not a spare" do
+            frame.roll(9)
+            frame.roll(2)
+            expect(frame.is_spare?).to be false
+        end
+    end
 end

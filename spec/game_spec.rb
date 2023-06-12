@@ -39,4 +39,12 @@ describe Frame do
             expect(frame.is_spare?).to be false
         end
     end
+
+    describe "#score" do
+        it "should return the sum of the ball scores" do
+            frame.roll(10)
+            frame.roll(9)
+            expect(frame.score).to eq(19)
+        end
+    end
 end

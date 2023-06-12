@@ -17,8 +17,6 @@
 If the current frame is a strike, then the bonus is the number of pins knocked down in the next two frames.
 If the current frame is a spare, then the bonus is the number of pins knocked down in the next frame.
 
-![Alt Text](./images/Diagram.png)
-
 ```mermaid
 flowchart TD;
 
@@ -37,9 +35,3 @@ I -->|pins == 10|J;
 I -->|pins sum < 10|J[Frame 3];
 
 ```
-
-2. Design the Class System
-
-3. Create Examples as Integration Tests
-
-4. Create Examples as Unit Tests
